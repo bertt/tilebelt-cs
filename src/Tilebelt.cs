@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tilebelt
+namespace Tiles
 {
     public class Tilebelt
     {
@@ -28,6 +28,5 @@ namespace Tilebelt
         {
             return y * 180 / GetNumberOfTiles(level) - 90;
         }
-
     }
 }
