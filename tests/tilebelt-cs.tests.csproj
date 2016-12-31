@@ -7,7 +7,7 @@
     <ProjectGuid>{66401402-4181-4FEB-9397-4D6C177344A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>tilebelt_cs.tests</RootNamespace>
+    <RootNamespace>Tilebelt.Tools.Tests</RootNamespace>
     <AssemblyName>tilebelt-cs.tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

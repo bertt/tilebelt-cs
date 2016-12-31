@@ -52,6 +52,24 @@ namespace Tilebelt.Tools.Tests
             Assert.IsTrue(tile.X == 2);
             Assert.IsTrue(tile.Y == 5);
             Assert.IsTrue(tile.Z == 9);
+
+            // check top tile
+            var tile1 = Tilebelt.GetParent(0,0,0);
+            Assert.IsTrue(tile1.X == 0);
+            Assert.IsTrue(tile1.Y == 0);
+            Assert.IsTrue(tile1.Z == 0);
+
+            // check LL
+            var tile2 = Tilebelt.GetParent(0, 1, 1);
+            Assert.IsTrue(tile2.X == 0);
+            Assert.IsTrue(tile2.Y == 0);
+            Assert.IsTrue(tile2.Z == 0);
+
+            // check LR
+            var tile3 = Tilebelt.GetParent(1, 1, 1);
+            Assert.IsTrue(tile3.X == 0);
+            Assert.IsTrue(tile3.Y == 0);
+            Assert.IsTrue(tile3.Z == 0);
         }
     }
 }

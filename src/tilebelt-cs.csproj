@@ -8,7 +8,7 @@
     <ProjectGuid>{1FD69B38-E851-4204-8BE9-D3702E23A248}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tilebelt</RootNamespace>
+    <RootNamespace>Tilebelt.Tools</RootNamespace>
     <AssemblyName>tilebelt</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>

@@ -41,7 +41,7 @@ namespace Tilebelt.Tools
             // UL
             if (x % 2 == 0 && y % 2 == 0)
             {
-                return new Tile(x / 2, y / 2, z - 1);
+                return new Tile(x / 2, y / 2, z);
             }
             // LL
             if ((x % 2 == 0) && (!(y % 2 == 0)))
