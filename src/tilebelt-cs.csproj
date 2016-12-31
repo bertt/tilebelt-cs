@@ -39,6 +39,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tile.cs" />
     <Compile Include="Tilebelt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

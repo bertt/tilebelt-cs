@@ -1,85 +1,57 @@
 ﻿using NUnit.Framework;
 
-namespace Tiles.Tests
+namespace Tilebelt.Tools.Tests
 {
     public class TilebeltTests
     {
         [Test]
-        public void GetTileBoundsTestsLevel0()
+        public void TileBoundsTest()
         {
             // act
-            var bounds = Tilebelt.GetTileBounds(0, 0, 0);
+            var bounds = Tilebelt.GetTileBounds(5, 10, 10);
 
             // assert
-            Assert.IsTrue(bounds[0] == -180);
-            Assert.IsTrue(bounds[1] == -90);
-            Assert.IsTrue(bounds[2] == 180);
-            Assert.IsTrue(bounds[3] == 90);
+            Assert.IsTrue(bounds[0] == -178.2421875);
+            Assert.IsTrue(bounds[1] == 84.7060489350415);
+            Assert.IsTrue(bounds[2] == -177.890625);
+            Assert.IsTrue(bounds[3] == 84.73838712095339);
         }
 
         [Test]
-        public void GetTileBoundsTestsLevel1LL()
-        {
-            // act LL
-            var bounds = Tilebelt.GetTileBounds(0, 0, 1);
-
-            // assert
-            Assert.IsTrue(bounds[0] == -180);
-            Assert.IsTrue(bounds[1] == -90);
-            Assert.IsTrue(bounds[2] == 0);
-            Assert.IsTrue(bounds[3] == 0);
-        }
-
-        [Test]
-        public void GetTileBoundsTestsLevel1UL()
-        {
-            // act UL
-            var bounds = Tilebelt.GetTileBounds(0, 1, 1);
-
-            // assert
-            Assert.IsTrue(bounds[0] == -180);
-            Assert.IsTrue(bounds[1] == 0);
-            Assert.IsTrue(bounds[2] == 0);
-            Assert.IsTrue(bounds[3] == 90);
-        }
-
-        [Test]
-        public void GetTileBoundsTestsLevel1LR()
-        {
-            // act LR
-            var bounds = Tilebelt.GetTileBounds(1, 0, 1);
-
-            // assert
-            Assert.IsTrue(bounds[0] == 0);
-            Assert.IsTrue(bounds[1] == -90);
-            Assert.IsTrue(bounds[2] == 180);
-            Assert.IsTrue(bounds[3] == 0);
-        }
-
-        [Test]
-        public void GetTileBoundsTestsLevel1UR()
-        {
-            // act UR
-            var bounds = Tilebelt.GetTileBounds(1, 1, 1);
-
-            // assert
-            Assert.IsTrue(bounds[0] == 0);
-            Assert.IsTrue(bounds[1] == 0);
-            Assert.IsTrue(bounds[2] == 180);
-            Assert.IsTrue(bounds[3] == 90);
-        }
-
-        [Test]
-        public void GetTileBoundsTestsLevel2()
+        public void PointToTileTest()
         {
             // act
-            var bounds = Tilebelt.GetTileBounds(1, 2, 2);
+            var tile = Tilebelt.PointToTile(0, 0, 10);
 
             // assert
-            Assert.IsTrue(bounds[0] == -90);
-            Assert.IsTrue(bounds[1] == 0);
-            Assert.IsTrue(bounds[2] == 0);
-            Assert.IsTrue(bounds[3] == 45);
+            Assert.IsTrue(tile.Z == 10);
+            Assert.IsTrue(tile.X == 512);
+            Assert.IsTrue(tile.Y == 512);
+        }
+
+        [Test]
+        public void ChildrenTest()
+        {
+            // act
+            var tiles = Tilebelt.GetChildren(0, 0, 0);
+
+            // assert
+            Assert.IsTrue(tiles.Count == 4);
+            Assert.IsTrue(tiles[0].Z == 1);
+            Assert.IsTrue(tiles[0].X == 0);
+            Assert.IsTrue(tiles[0].Y == 0);
+        }
+
+        [Test]
+        public void ParentTest()
+        {
+            // act
+            var tile = Tilebelt.GetParent(5,10,10);
+
+            // assert
+            Assert.IsTrue(tile.X == 2);
+            Assert.IsTrue(tile.Y == 5);
+            Assert.IsTrue(tile.Z == 9);
         }
     }
 }
