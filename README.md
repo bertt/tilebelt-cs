@@ -14,6 +14,15 @@ package-install tilebelt
 ```
 // get bounding box of tile
 var bounds = Tilebelt.GetTileBounds(0, 0, 0);
+
+// Point to tile
+var tile = Tilebelt.PointToTile(0, 0, 10);
+
+// GetChildren
+var tiles = Tilebelt.GetChildren(0, 0, 0);
+
+// GetParent
+var tile = Tilebelt.GetParent(5,10,10);
 ```
 
 ## Todo
