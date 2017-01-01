@@ -14,6 +14,10 @@ package-install tilebelt
 
 NETStandard.Library 1.6.1 https://www.nuget.org/packages/NETStandard.Library/
 
+## Dependents
+
+. https://github.com/bertt/quantized-mesh-tile-cs
+
 ## Usage
 ```
 // ------------------------------------------------------
@@ -43,7 +47,7 @@ var bounds = tile.Bounds();
 // tile.Children
 // input: -
 // output: 4 children tiles (col, row, level)
-var tiles = tile.Children(0, 0, 0);
+var tiles = tile.Children();
 
 // tile.Parent
 // input: -
@@ -62,11 +66,9 @@ var equals = tile1.Equals(tile2);
 
 // tile.Quadkey()
 // input: -
-// Output: Quadkey of tile
+// output: Quadkey of tile
 var quadkey = tile.Quadkey(); 
 ```
 ## Todo
 
 Implement other tile functions
-
-
