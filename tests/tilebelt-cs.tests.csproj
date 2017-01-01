@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Tilebeltests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TileTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\tilebelt-cs.csproj">
