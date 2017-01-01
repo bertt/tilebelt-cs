@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Tilebelt
 {
@@ -27,9 +28,87 @@ namespace Tilebelt
                 return otherTile.X == X && otherTile.Y == Y && otherTile.Z == Z;
         }
 
+        public double[] GetBounds()
+        {
+            var x0 = TileToLon(X, Z);
+            var x1 = TileToLon(X + 1, Z);
+            var y0 = TileToLat(Y + 1, Z);
+            var y1 = TileToLat(Y, Z);
+
+            return new double[4] { x0, y0, x1, y1 };
+        }
+
+        public List<Tile> GetChildren()
+        {
+            var t1 = new Tile(X * 2, Y * 2, Z + 1);
+            var t2 = new Tile(X * 2 + 1, Y * 2, Z + 1);
+            var t3 = new Tile(X * 2 + 1, Y * 2 + 1, Z + 1);
+            var t4 = new Tile(X * 2, Y * 2 + 1, Z + 1);
+            return new List<Tile>() { t1, t2, t3, t4 };
+        }
+
+        public Tile GetParent()
+        {
+            // UL
+            if (X % 2 == 0 && Y % 2 == 0)
+            {
+                return new Tile(X / 2, Y / 2, Z);
+            }
+            // LL
+            if ((X % 2 == 0) && (!(Y % 2 == 0)))
+            {
+                return new Tile(X / 2, (Y - 1) / 2, Z - 1);
+            }
+            // UR
+            if ((!(X % 2 == 0)) && (Y % 2 == 0))
+            {
+                return new Tile((X - 1) / 2, Y / 2, Z - 1);
+            }
+            // LR
+            return new Tile((X - 1) / 2, (Y - 1) / 2, Z - 1);
+        }
+
         public override int GetHashCode()
         {
             return X.GetHashCode() + Y.GetHashCode() + Z.GetHashCode();
+        }
+
+        public string Quadkey()
+        {
+            var index = String.Empty;
+            for (var z = Z; z > 0; z--)
+            {
+                var b = 0;
+                var mask = 1 << (z - 1);
+                if ((X & mask) != 0) b++;
+                if ((Y & mask) != 0) b += 2;
+                index += b.ToString();
+            }
+            return index;
+        }
+
+        public List<Tile> GetSiblings()
+        {
+            var parentTile = GetParent();
+            return parentTile.GetChildren();
+        }
+
+        private double TileToLon(int x, int level)
+        {
+            return x * 360 / GetNumberOfTiles() - 180;
+        }
+
+        private double TileToLat(int y, int level)
+        {
+            double r2d = 180 / Math.PI;
+            var n = Math.PI - 2 * Math.PI * y / Math.Pow(2, level);
+            return r2d * Math.Atan(0.5 * (Math.Exp(n) - Math.Exp(-n)));
+            // was before: return y * 180 / GetNumberOfTiles(level) - 90;
+        }
+
+        private double GetNumberOfTiles()
+        {
+            return Math.Pow(2, Z);
         }
     }
 }

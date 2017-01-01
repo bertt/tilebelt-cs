@@ -8,7 +8,8 @@ namespace Tilebelt.Tools.Tests
         public void TileBoundsTest()
         {
             // act
-            var bounds = Tilebelt.GetTileBounds(5, 10, 10);
+            var tile = new Tile(5, 10, 10);
+            var bounds = tile.GetBounds();
 
             // assert
             Assert.IsTrue(bounds[0] == -178.2421875);
@@ -30,10 +31,28 @@ namespace Tilebelt.Tools.Tests
         }
 
         [Test]
+        public void PointToTileAndQuadkeyTest()
+        {
+            // arrange 
+            var expectedQuadkey = "0320100322";
+            
+            // act
+            var tile = Tilebelt.PointToTile(-77.03239381313323, 38.91326516559442, 10);
+            var quadkey = tile.Quadkey();
+
+            // assert
+            Assert.IsTrue(tile.X == 292);
+            Assert.IsTrue(tile.Y == 391);
+            Assert.IsTrue(tile.Z == 10);
+            Assert.IsTrue(quadkey == expectedQuadkey);
+        }
+
+        [Test]
         public void ChildrenTest()
         {
             // act
-            var tiles = Tilebelt.GetChildren(0, 0, 0);
+            var tile = new Tile(0, 0, 0);
+            var tiles = tile.GetChildren();
 
             // assert
             Assert.IsTrue(tiles.Count == 4);
@@ -46,30 +65,45 @@ namespace Tilebelt.Tools.Tests
         public void ParentTest()
         {
             // act
-            var tile = Tilebelt.GetParent(5,10,10);
+            var tile = new Tile(5, 10, 10);
+            var parent = tile.GetParent();
 
             // assert
-            Assert.IsTrue(tile.X == 2);
-            Assert.IsTrue(tile.Y == 5);
-            Assert.IsTrue(tile.Z == 9);
+            Assert.IsTrue(parent.X == 2);
+            Assert.IsTrue(parent.Y == 5);
+            Assert.IsTrue(parent.Z == 9);
 
             // check top tile
-            var tile1 = Tilebelt.GetParent(0,0,0);
+            tile = new Tile(0, 0, 0);
+            var tile1 = tile.GetParent();
             Assert.IsTrue(tile1.X == 0);
             Assert.IsTrue(tile1.Y == 0);
             Assert.IsTrue(tile1.Z == 0);
 
             // check LL
-            var tile2 = Tilebelt.GetParent(0, 1, 1);
+            tile = new Tile(0, 1, 1);
+            var tile2 = tile.GetParent();
             Assert.IsTrue(tile2.X == 0);
             Assert.IsTrue(tile2.Y == 0);
             Assert.IsTrue(tile2.Z == 0);
 
             // check LR
-            var tile3 = Tilebelt.GetParent(1, 1, 1);
+            tile = new Tile(1, 1, 1);
+            var tile3 = tile.GetParent();
             Assert.IsTrue(tile3.X == 0);
             Assert.IsTrue(tile3.Y == 0);
             Assert.IsTrue(tile3.Z == 0);
+        }
+
+        [Test]
+        public void QuadkeyTest()
+        {
+            // act
+            var tile = Tilebelt.GetTileByQuadkey("00001033");
+            var expectedTile = new Tile(11, 3, 8);
+
+            // assert
+            Assert.IsTrue(tile.Equals(expectedTile));
         }
     }
 }
