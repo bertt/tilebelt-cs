@@ -16,7 +16,7 @@ namespace Tilebelt.Tools
             return tile;
         }
 
-        public static Tile GetTileByQuadkey(string quadkey)
+        public static Tile QuadkeyToTile(string quadkey)
         {
             var x = 0;
             var y = 0;

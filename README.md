@@ -20,44 +20,47 @@ NETStandard.Library 1.6.1 https://www.nuget.org/packages/NETStandard.Library/
 // Tilebelt methods
 // ------------------------------------------------------
 // Tilebelt.PointToTile
-// input:  x, y in WGS84
+// input: x, y in WGS84
 // output: tile (col, row,level)
 var tile = Tilebelt.PointToTile(0, 0, 10);
 
-// Tilebelt.GetTileByQuadkey
+// Tilebelt.QuadkeyToTile
 // input: quadkey
 // output: Tile (col, row, level)
 
 // ------------------------------------------------------
 // Tile methods
 // ------------------------------------------------------
+// tile constructors
+var tile = new Tile();
+var tile = new Tile(5,5,10); // col, row, level 
 
-// Tile.GetBounds - get bounding box of tile
+// tile.Bounds - get bounding box of tile
 // input: -
 // output: bounds [xmin, ymin, xmax, ymax] in WGS94
-var bounds = tile.GetBounds();
+var bounds = tile.Bounds();
 
-// Tile.GetChildren
+// tile.Children
 // input: -
 // output: 4 children tiles (col, row, level)
-var tiles = tile.GetChildren(0, 0, 0);
+var tiles = tile.Children(0, 0, 0);
 
-// Tile.GetParent
+// tile.Parent
 // input: -
 // output: parent tile (col, row, level)
-var parentTile = tile.GetParent();
+var parentTile = tile.Parent();
 
-// Tile.GetSiblings
+// tile.Siblings
 // input: -
 // out: 4 siblings tiles
-var siblings = tile.GetSiblings();
+var siblings = tile.Siblings();
 
-// Tile.Equals
+// tile.Equals
 // input: tile (col, row, level)
 // output: boolean equals
 var equals = tile1.Equals(tile2);
 
-// Tile.Quadkey()
+// tile.Quadkey()
 // input: -
 // Output: Quadkey of tile
 var quadkey = tile.Quadkey(); 

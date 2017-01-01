@@ -9,7 +9,7 @@ namespace Tilebelt.Tools.Tests
         {
             // act
             var tile = new Tile(5, 10, 10);
-            var bounds = tile.GetBounds();
+            var bounds = tile.Bounds();
 
             // assert
             Assert.IsTrue(bounds[0] == -178.2421875);
@@ -52,7 +52,7 @@ namespace Tilebelt.Tools.Tests
         {
             // act
             var tile = new Tile(0, 0, 0);
-            var tiles = tile.GetChildren();
+            var tiles = tile.Children();
 
             // assert
             Assert.IsTrue(tiles.Count == 4);
@@ -66,7 +66,7 @@ namespace Tilebelt.Tools.Tests
         {
             // act
             var tile = new Tile(5, 10, 10);
-            var parent = tile.GetParent();
+            var parent = tile.Parent();
 
             // assert
             Assert.IsTrue(parent.X == 2);
@@ -75,21 +75,21 @@ namespace Tilebelt.Tools.Tests
 
             // check top tile
             tile = new Tile(0, 0, 0);
-            var tile1 = tile.GetParent();
+            var tile1 = tile.Parent();
             Assert.IsTrue(tile1.X == 0);
             Assert.IsTrue(tile1.Y == 0);
             Assert.IsTrue(tile1.Z == 0);
 
             // check LL
             tile = new Tile(0, 1, 1);
-            var tile2 = tile.GetParent();
+            var tile2 = tile.Parent();
             Assert.IsTrue(tile2.X == 0);
             Assert.IsTrue(tile2.Y == 0);
             Assert.IsTrue(tile2.Z == 0);
 
             // check LR
             tile = new Tile(1, 1, 1);
-            var tile3 = tile.GetParent();
+            var tile3 = tile.Parent();
             Assert.IsTrue(tile3.X == 0);
             Assert.IsTrue(tile3.Y == 0);
             Assert.IsTrue(tile3.Z == 0);
@@ -99,7 +99,7 @@ namespace Tilebelt.Tools.Tests
         public void QuadkeyTest()
         {
             // act
-            var tile = Tilebelt.GetTileByQuadkey("00001033");
+            var tile = Tilebelt.QuadkeyToTile("00001033");
             var expectedTile = new Tile(11, 3, 8);
 
             // assert

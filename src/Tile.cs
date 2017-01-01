@@ -28,7 +28,7 @@ namespace Tilebelt
                 return otherTile.X == X && otherTile.Y == Y && otherTile.Z == Z;
         }
 
-        public double[] GetBounds()
+        public double[] Bounds()
         {
             var x0 = TileToLon(X, Z);
             var x1 = TileToLon(X + 1, Z);
@@ -38,7 +38,7 @@ namespace Tilebelt
             return new double[4] { x0, y0, x1, y1 };
         }
 
-        public List<Tile> GetChildren()
+        public List<Tile> Children()
         {
             var t1 = new Tile(X * 2, Y * 2, Z + 1);
             var t2 = new Tile(X * 2 + 1, Y * 2, Z + 1);
@@ -47,7 +47,7 @@ namespace Tilebelt
             return new List<Tile>() { t1, t2, t3, t4 };
         }
 
-        public Tile GetParent()
+        public Tile Parent()
         {
             // UL
             if (X % 2 == 0 && Y % 2 == 0)
@@ -68,6 +68,12 @@ namespace Tilebelt
             return new Tile((X - 1) / 2, (Y - 1) / 2, Z - 1);
         }
 
+        public List<Tile> Siblings()
+        {
+            var parentTile = Parent();
+            return parentTile.Children();
+        }
+
         public override int GetHashCode()
         {
             return X.GetHashCode() + Y.GetHashCode() + Z.GetHashCode();
@@ -85,12 +91,6 @@ namespace Tilebelt
                 index += b.ToString();
             }
             return index;
-        }
-
-        public List<Tile> GetSiblings()
-        {
-            var parentTile = GetParent();
-            return parentTile.GetChildren();
         }
 
         private double TileToLon(int x, int level)

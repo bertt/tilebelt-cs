@@ -25,7 +25,7 @@ namespace Tilebelt.Tools.Tests
             var tile1 = new Tile(5, 10, 10);
 
             // act
-            var tiles = tile1.GetSiblings();
+            var tiles = tile1.Siblings();
 
             // assert
             Assert.IsTrue(tiles.Count == 4);
@@ -81,7 +81,7 @@ namespace Tilebelt.Tools.Tests
             var expectedTile = new Tile(1, 1, 2);
 
             // act
-            var tile = Tilebelt.GetTileByQuadkey(quadkey);
+            var tile = Tilebelt.QuadkeyToTile(quadkey);
 
             // assert
             Assert.IsTrue(tile.Equals(expectedTile));
@@ -95,7 +95,7 @@ namespace Tilebelt.Tools.Tests
 
             // arrange
             var quadkey = tile.Quadkey();
-            var tile1 = Tilebelt.GetTileByQuadkey(quadkey);
+            var tile1 = Tilebelt.QuadkeyToTile(quadkey);
 
             // act
             Assert.IsTrue(tile.Equals(tile1));
