@@ -2,7 +2,7 @@
 
 [![NuGet Status](http://img.shields.io/nuget/v/tilebelt.svg?style=flat)](https://www.nuget.org/packages/tilebelt/)
 
-Set of tile utility functions, inspired by the MapBox Tilebelt library (https://github.com/mapbox/tilebelt)
+Set of tile utility functions, inspired by the Mapbox Tilebelt library (https://github.com/mapbox/tilebelt)
 
 ## Install
 
