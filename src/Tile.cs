@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Tilebelt
+namespace Tiles.Tools
 {
     public class Tile
     {
@@ -81,7 +81,7 @@ namespace Tilebelt
 
         public string Quadkey()
         {
-            var index = String.Empty;
+            var index = string.Empty;
             for (var z = Z; z > 0; z--)
             {
                 var b = 0;
@@ -91,6 +91,11 @@ namespace Tilebelt
                 index += b.ToString();
             }
             return index;
+        }
+
+        public override string ToString()
+        {
+            return $"col={X},row={Y},level={Z}";
         }
 
         private double TileToLon(int x, int level)

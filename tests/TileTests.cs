@@ -1,9 +1,24 @@
 ﻿using NUnit.Framework;
+using Tiles.Tools;
 
-namespace Tilebelt.Tools.Tests
+namespace Tests
 {
     public class TileTests
     {
+        [Test]
+        public void ToStringTest()
+        {
+            // arrange
+            var tile = new Tile(0, 0, 0);
+            var expected = "col=0,row=0,level=0";
+
+            // act
+            var s= tile.ToString();
+
+            // assert
+            Assert.IsTrue(expected == s);
+        }
+
         [Test]
         public void ChildrenTest()
         {

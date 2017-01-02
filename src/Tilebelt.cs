@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tilebelt.Tools
+namespace Tiles.Tools
 {
     public class Tilebelt
     {

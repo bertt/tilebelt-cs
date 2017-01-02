@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tilebelt-cs.tests", "tests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tilebelt-cs", "src\tilebelt-cs.csproj", "{1FD69B38-E851-4204-8BE9-D3702E23A248}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{6A879500-33B7-4DD0-85A8-7B60EAD07F69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tile-cs-sample.console", "tile-cs-sample.console\tile-cs-sample.console.csproj", "{5C2EA924-BCC7-4F81-B832-64EF252704D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +25,15 @@ Global
 		{1FD69B38-E851-4204-8BE9-D3702E23A248}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FD69B38-E851-4204-8BE9-D3702E23A248}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FD69B38-E851-4204-8BE9-D3702E23A248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C2EA924-BCC7-4F81-B832-64EF252704D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2EA924-BCC7-4F81-B832-64EF252704D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2EA924-BCC7-4F81-B832-64EF252704D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2EA924-BCC7-4F81-B832-64EF252704D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5C2EA924-BCC7-4F81-B832-64EF252704D0} = {6A879500-33B7-4DD0-85A8-7B60EAD07F69}
 	EndGlobalSection
 EndGlobal

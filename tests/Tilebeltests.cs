@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Tilebelt.Tools.Tests
+namespace Tiles.Tools.Tests
 {
     public class TilebeltTests
     {
