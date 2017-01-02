@@ -2,7 +2,7 @@
 
 [![NuGet Status](http://img.shields.io/nuget/v/tilebelt.svg?style=flat)](https://www.nuget.org/packages/tilebelt/)
 
-Set of tile utility functions, inspired on the MapBox Tilebelt library (https://github.com/mapbox/tilebelt)
+Set of tile utility functions, inspired by the Mapbox Tilebelt library (https://github.com/mapbox/tilebelt)
 
 ## Install
 
@@ -13,6 +13,10 @@ package-install tilebelt
 ## Dependencies
 
 NETStandard.Library 1.6.1 https://www.nuget.org/packages/NETStandard.Library/
+
+## Dependents
+
+. https://github.com/bertt/quantized-mesh-tile-cs
 
 ## Usage
 ```
@@ -48,7 +52,7 @@ var bounds = tile.Bounds();
 // tile.Children
 // input: -
 // output: 4 children tiles (col, row, level)
-var tiles = tile.Children(0, 0, 0);
+var tiles = tile.Children();
 
 // tile.Parent
 // input: -
@@ -67,11 +71,9 @@ var equals = tile1.Equals(tile2);
 
 // tile.Quadkey()
 // input: -
-// Output: Quadkey of tile
+// output: Quadkey of tile
 var quadkey = tile.Quadkey(); 
 ```
 ## Todo
 
 Implement other tile functions
-
-
