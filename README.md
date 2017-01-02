@@ -16,6 +16,8 @@ NETStandard.Library 1.6.1 https://www.nuget.org/packages/NETStandard.Library/
 
 ## Dependents
 
+https://github.com/bertt/quantized-mesh-tile-cs
+
 ## Usage
 ```
 // ------------------------------------------------------
