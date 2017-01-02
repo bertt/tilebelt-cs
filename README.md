@@ -77,6 +77,3 @@ var equals = tile1.Equals(tile2);
 // output: Quadkey of tile
 var quadkey = tile.Quadkey(); 
 ```
-## Todo
-
-Implement other tile functions
