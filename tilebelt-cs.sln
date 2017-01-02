@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tilebelt-cs.tests", "tests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tilebelt-cs", "src\tilebelt-cs.csproj", "{1FD69B38-E851-4204-8BE9-D3702E23A248}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{6A879500-33B7-4DD0-85A8-7B60EAD07F69}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{6FEF4863-54B4-4DC1-A231-3569317DD48E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tile-cs-sample.console", "tile-cs-sample.console\tile-cs-sample.console.csproj", "{5C2EA924-BCC7-4F81-B832-64EF252704D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tile-cs-sample.console", "samples\console\tile-cs-sample.console.csproj", "{5C2EA924-BCC7-4F81-B832-64EF252704D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +34,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5C2EA924-BCC7-4F81-B832-64EF252704D0} = {6A879500-33B7-4DD0-85A8-7B60EAD07F69}
+		{5C2EA924-BCC7-4F81-B832-64EF252704D0} = {6FEF4863-54B4-4DC1-A231-3569317DD48E}
 	EndGlobalSection
 EndGlobal
