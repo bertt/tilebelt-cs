@@ -28,6 +28,11 @@ var tile = Tilebelt.PointToTile(0, 0, 10);
 // input: quadkey
 // output: Tile (col, row, level)
 
+// Tilebelt.GetBboxZoom
+// input: bounds [xmin, ymin, xmax, ymax] in WGS84
+// output: zoomlevel (int)
+var level = Tilebelt.GetBboxZoom(-84.72,11.17,-5.62,61.60);
+
 // ------------------------------------------------------
 // Tile methods
 // ------------------------------------------------------
@@ -37,7 +42,7 @@ var tile = new Tile(5,5,10); // col, row, level
 
 // tile.Bounds - get bounding box of tile
 // input: -
-// output: bounds [xmin, ymin, xmax, ymax] in WGS94
+// output: bounds [xmin, ymin, xmax, ymax] in WGS84
 var bounds = tile.Bounds();
 
 // tile.Children

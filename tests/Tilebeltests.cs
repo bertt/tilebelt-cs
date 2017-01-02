@@ -5,20 +5,6 @@ namespace Tilebelt.Tools.Tests
     public class TilebeltTests
     {
         [Test]
-        public void TileBoundsTest()
-        {
-            // act
-            var tile = new Tile(5, 10, 10);
-            var bounds = tile.Bounds();
-
-            // assert
-            Assert.IsTrue(bounds[0] == -178.2421875);
-            Assert.IsTrue(bounds[1] == 84.7060489350415);
-            Assert.IsTrue(bounds[2] == -177.890625);
-            Assert.IsTrue(bounds[3] == 84.73838712095339);
-        }
-
-        [Test]
         public void PointToTileTest()
         {
             // act
@@ -48,62 +34,53 @@ namespace Tilebelt.Tools.Tests
         }
 
         [Test]
-        public void ChildrenTest()
+        public void MaskTest()
         {
+            // arrange
+            var bbox0 = -84.72656249999999;
+            var mask = 64;
+            var expectedResult = 0;
+
             // act
-            var tile = new Tile(0, 0, 0);
-            var tiles = tile.Children();
+            var p = ((int)bbox0 & mask);
 
             // assert
-            Assert.IsTrue(tiles.Count == 4);
-            Assert.IsTrue(tiles[0].Z == 1);
-            Assert.IsTrue(tiles[0].X == 0);
-            Assert.IsTrue(tiles[0].Y == 0);
+            Assert.IsTrue(p == expectedResult);
         }
 
         [Test]
-        public void ParentTest()
+        public void BboxZoom()
         {
+            // arrange
+            var bbox = new double[] { -84.72656249999999,
+                            11.178401873711785,
+                            -5.625,
+                            61.60639637138628 };
+            var expectedLevel = 25;
+
             // act
-            var tile = new Tile(5, 10, 10);
-            var parent = tile.Parent();
+            var level = Tilebelt.GetBboxZoom(bbox);
 
             // assert
-            Assert.IsTrue(parent.X == 2);
-            Assert.IsTrue(parent.Y == 5);
-            Assert.IsTrue(parent.Z == 9);
-
-            // check top tile
-            tile = new Tile(0, 0, 0);
-            var tile1 = tile.Parent();
-            Assert.IsTrue(tile1.X == 0);
-            Assert.IsTrue(tile1.Y == 0);
-            Assert.IsTrue(tile1.Z == 0);
-
-            // check LL
-            tile = new Tile(0, 1, 1);
-            var tile2 = tile.Parent();
-            Assert.IsTrue(tile2.X == 0);
-            Assert.IsTrue(tile2.Y == 0);
-            Assert.IsTrue(tile2.Z == 0);
-
-            // check LR
-            tile = new Tile(1, 1, 1);
-            var tile3 = tile.Parent();
-            Assert.IsTrue(tile3.X == 0);
-            Assert.IsTrue(tile3.Y == 0);
-            Assert.IsTrue(tile3.Z == 0);
+            Assert.IsTrue(level == expectedLevel);
         }
 
         [Test]
-        public void QuadkeyTest()
+        public void BboxMaxZoom()
         {
+            // arrange
+            var bbox = new double[] { 0,
+                            0,
+                            1,
+                            1};
+            var expectedLevel = 28;
+
             // act
-            var tile = Tilebelt.QuadkeyToTile("00001033");
-            var expectedTile = new Tile(11, 3, 8);
+            var level = Tilebelt.GetBboxZoom(bbox);
 
             // assert
-            Assert.IsTrue(tile.Equals(expectedTile));
+            Assert.IsTrue(level == expectedLevel);
         }
+
     }
 }

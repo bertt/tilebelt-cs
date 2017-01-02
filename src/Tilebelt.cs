@@ -6,6 +6,22 @@ namespace Tilebelt.Tools
     {
         private static double d2r = Math.PI / 180;
 
+        public static int GetBboxZoom(double[] bbox)
+        {
+            var MAX_ZOOM = 28;
+            for (var z = 0; z < MAX_ZOOM; z++)
+            {
+                var mask = 1 << (32 - (z + 1));
+                if ((((int)bbox[0] & mask) != ((int)bbox[2] & mask)) ||
+                    (((int)bbox[1] & mask) != ((int)bbox[3] & mask)))
+                {
+                    return z;
+                }
+            }
+
+            return MAX_ZOOM;
+        }
+
         public static Tile PointToTile(double lon, double lat, int z)
         {
             var tileFraction = pointToTileFraction(lon, lat, z);
