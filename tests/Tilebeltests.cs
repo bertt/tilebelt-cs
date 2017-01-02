@@ -5,6 +5,76 @@ namespace Tilebelt.Tools.Tests
     public class TilebeltTests
     {
         [Test]
+        public void BboxToTileBig()
+        {
+            // arrange
+            var bbox = new double[] { -84.72656249999999,
+                            11.178401873711785,
+                            -5.625,
+                            61.60639637138628 };
+
+            var expectedTile = new Tile(1, 1, 2);
+
+            // act
+            var tile = Tilebelt.BboxToTile(bbox);
+
+            // assert
+            Assert.IsTrue(tile.Equals(expectedTile));
+        }
+
+        [Test]
+        public void BboxToTileNoArea()
+        {
+            // arrange
+            var bbox = new double[] { -84,
+                11,
+                -84,
+                11 };
+
+            var expectedTile = new Tile(71582788, 125964677, 28);
+
+            // act
+            var tile = Tilebelt.BboxToTile(bbox);
+
+            // assert
+            Assert.IsTrue(tile.Equals(expectedTile));
+        }
+
+        [Test]
+        public void BboxToTileDc()
+        {
+            // arrange
+            var bbox = new double[] { -77.04615354537964,
+                38.899967510782346,
+                -77.03664779663086,
+                38.90728142481329 };
+
+            var expectedTile = new Tile(9371, 12534, 15);
+
+            // act
+            var tile = Tilebelt.BboxToTile(bbox);
+
+            // assert
+            Assert.IsTrue(tile.Equals(expectedTile));
+        }
+
+        [Test]
+        public void BboxToTileCrossingLatLon()
+        {
+            // arrange
+            var bbox = new double[] { -10, -10, 10, 10 };
+
+            var expectedTile = new Tile(0, 0, 0);
+
+            // act
+            var tile = Tilebelt.BboxToTile(bbox);
+
+            // assert
+            Assert.IsTrue(tile.Equals(expectedTile));
+        }
+
+
+        [Test]
         public void PointToTileTest()
         {
             // act
@@ -81,6 +151,5 @@ namespace Tilebelt.Tools.Tests
             // assert
             Assert.IsTrue(level == expectedLevel);
         }
-
     }
 }

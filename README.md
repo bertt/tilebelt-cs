@@ -37,6 +37,11 @@ var tile = Tilebelt.PointToTile(0, 0, 10);
 // output: zoomlevel (int)
 var level = Tilebelt.GetBboxZoom(-84.72,11.17,-5.62,61.60);
 
+// Tilebel.BboxToTile
+// input: bounds [xmin, ymin, xmax, ymax] in WGS84
+// output: tile, smallest tile to cover the bbox
+var tile = Tilebelt.BboxToTile(-84.72,11.17,-5.62,61.60);
+
 // ------------------------------------------------------
 // Tile methods
 // ------------------------------------------------------

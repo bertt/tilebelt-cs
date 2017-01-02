@@ -22,6 +22,21 @@ namespace Tilebelt.Tools
             return MAX_ZOOM;
         }
 
+        public static Tile BboxToTile(double[] bbox)
+        {
+            var p = bbox[0];
+            var minTile = PointToTile(bbox[0], bbox[1], 32);
+            var maxTile = PointToTile(bbox[2], bbox[3], 32);
+
+            var newBbox = new double[] { minTile.X, minTile.Y, maxTile.X, maxTile.Y };
+
+            var z = GetBboxZoom(newBbox);
+            if (z == 0) return new Tile(0, 0, 0);
+            var x = (int)newBbox[0] >> (32 - z);
+            var y = (int)newBbox[1] >> (32 - z);
+            return new Tile(x, y, z);
+        }
+
         public static Tile PointToTile(double lon, double lat, int z)
         {
             var tileFraction = pointToTileFraction(lon, lat, z);
