@@ -2,7 +2,7 @@
 
 [![NuGet Status](http://img.shields.io/nuget/v/tilebelt.svg?style=flat)](https://www.nuget.org/packages/tilebelt/)
 
-Set of tile utility functions for OpenStreetMap tiling scheme (https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames).  Inspired by the Mapbox Tilebelt library (https://github.com/mapbox/tilebelt).
+Set of tile utility functions written in C# for working with OpenStreetMap tiling scheme (https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames).  Inspired by the Mapbox Tilebelt library (https://github.com/mapbox/tilebelt).
 
 ## Install
 
