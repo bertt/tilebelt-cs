@@ -12,7 +12,15 @@ package-install tilebelt
 
 ## Dependencies
 
-NETStandard.Library 1.6.1 https://www.nuget.org/packages/NETStandard.Library/
+.NETStandard 1.1
+
+- System.Collections (>= 4.3.0)
+
+- System.Runtime.Extensions (>= 4.3.0)
+
+- System.Resources.ResourceManager (>= 4.3.0)
+
+- System.Runtime (>= 4.3.0)
 
 ## Dependents
 
