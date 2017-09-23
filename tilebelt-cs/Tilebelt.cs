@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Tiles.Tools
 {
@@ -75,6 +74,10 @@ namespace Tiles.Tools
             var z2 = Math.Pow(2, z);
             var x = z2 * (lon / 360 + 0.5);
             var y = z2 * (0.5 - 0.25 * Math.Log((1 + sin) / (1 - sin)) / Math.PI);
+
+            // wrap tile X
+            x = x % z2;
+            if (x < 0) x = x + z2;
             return new double[] { x, y, z };
         }
     }

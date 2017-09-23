@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tilebelt-cs.tests", "tests\tilebelt-cs.tests.csproj", "{66401402-4181-4FEB-9397-4D6C177344A3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tilebelt-cs", "src\tilebelt-cs.csproj", "{1FD69B38-E851-4204-8BE9-D3702E23A248}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{6FEF4863-54B4-4DC1-A231-3569317DD48E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tile-cs-sample.console", "samples\console\tile-cs-sample.console.csproj", "{5C2EA924-BCC7-4F81-B832-64EF252704D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tilebelt-cs", "tilebelt-cs\tilebelt-cs.csproj", "{BBCDB3E8-9D8C-4657-8332-020F862A8669}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,19 +21,22 @@ Global
 		{66401402-4181-4FEB-9397-4D6C177344A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66401402-4181-4FEB-9397-4D6C177344A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66401402-4181-4FEB-9397-4D6C177344A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1FD69B38-E851-4204-8BE9-D3702E23A248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FD69B38-E851-4204-8BE9-D3702E23A248}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FD69B38-E851-4204-8BE9-D3702E23A248}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FD69B38-E851-4204-8BE9-D3702E23A248}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C2EA924-BCC7-4F81-B832-64EF252704D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5C2EA924-BCC7-4F81-B832-64EF252704D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C2EA924-BCC7-4F81-B832-64EF252704D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C2EA924-BCC7-4F81-B832-64EF252704D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBCDB3E8-9D8C-4657-8332-020F862A8669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBCDB3E8-9D8C-4657-8332-020F862A8669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBCDB3E8-9D8C-4657-8332-020F862A8669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBCDB3E8-9D8C-4657-8332-020F862A8669}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5C2EA924-BCC7-4F81-B832-64EF252704D0} = {6FEF4863-54B4-4DC1-A231-3569317DD48E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5C180DB-5103-454C-B99F-14CAECF0C5C5}
 	EndGlobalSection
 EndGlobal

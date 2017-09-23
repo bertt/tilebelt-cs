@@ -20,6 +20,34 @@ namespace Tests
         }
 
         [Test]
+        public void CentreTest()
+        {
+            //arrange
+            var tile = new Tile(0, 0, 0);
+
+            // act
+            var centre = tile.Centre();
+
+            // assert
+            Assert.IsTrue(centre[0] == 0);
+            Assert.IsTrue(centre[1] == 0);
+        }
+
+        [Test]
+        public void OtherCentreTest()
+        {
+            //arrange
+            var tile = new Tile(5, 10, 10);
+
+            // act
+            var centre = tile.Centre();
+
+            // assert
+            Assert.IsTrue(centre[0] == -178.06640625);
+            Assert.IsTrue(centre[1] == 84.722218027997442);
+        }
+
+        [Test]
         public void ChildrenTest()
         {
             // act

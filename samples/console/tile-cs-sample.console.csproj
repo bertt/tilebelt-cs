@@ -50,8 +50,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\tilebelt-cs.csproj">
-      <Project>{1fd69b38-e851-4204-8be9-d3702e23a248}</Project>
+    <ProjectReference Include="..\..\tilebelt-cs\tilebelt-cs.csproj">
+      <Project>{bbcdb3e8-9d8c-4657-8332-020f862a8669}</Project>
       <Name>tilebelt-cs</Name>
     </ProjectReference>
   </ItemGroup>

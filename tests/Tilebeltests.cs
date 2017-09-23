@@ -73,6 +73,22 @@ namespace Tiles.Tools.Tests
             Assert.IsTrue(tile.Equals(expectedTile));
         }
 
+        [Test]
+        public void BBoxToTileCrossMeridian()
+        {
+            // arrange
+            var bbox = new double[] { -0.000001, -85, 1000000, 85 };
+
+            var expectedTile = new Tile(0, 0, 0);
+
+            // act
+            var tile = Tilebelt.BboxToTile(bbox);
+
+            // assert
+            Assert.IsTrue(tile.Equals(expectedTile));
+        }
+
+
 
         [Test]
         public void PointToTileTest()

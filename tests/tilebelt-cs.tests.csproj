@@ -49,16 +49,16 @@
     <Compile Include="TileTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\tilebelt-cs.csproj">
-      <Project>{1fd69b38-e851-4204-8be9-d3702e23a248}</Project>
-      <Name>tilebelt-cs</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\tilebelt-cs\tilebelt-cs.csproj">
+      <Project>{bbcdb3e8-9d8c-4657-8332-020f862a8669}</Project>
+      <Name>tilebelt-cs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
