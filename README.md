@@ -14,14 +14,6 @@ package-install tilebelt
 
 .NETStandard 1.1
 
-- System.Collections (>= 4.3.0)
-
-- System.Runtime.Extensions (>= 4.3.0)
-
-- System.Resources.ResourceManager (>= 4.3.0)
-
-- System.Runtime (>= 4.3.0)
-
 ## Dependents
 
 https://github.com/bertt/quantized-mesh-tile-cs
