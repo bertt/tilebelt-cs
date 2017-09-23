@@ -20,31 +20,31 @@ namespace Tests
         }
 
         [Test]
-        public void CentreTest()
+        public void CenterTest()
         {
             //arrange
             var tile = new Tile(0, 0, 0);
 
             // act
-            var centre = tile.Centre();
+            var center = tile.Center();
 
             // assert
-            Assert.IsTrue(centre[0] == 0);
-            Assert.IsTrue(centre[1] == 0);
+            Assert.IsTrue(center[0] == 0);
+            Assert.IsTrue(center[1] == 0);
         }
 
         [Test]
-        public void OtherCentreTest()
+        public void OtherCenterTest()
         {
             //arrange
             var tile = new Tile(5, 10, 10);
 
             // act
-            var centre = tile.Centre();
+            var center = tile.Center();
 
             // assert
-            Assert.IsTrue(centre[0] == -178.06640625);
-            Assert.IsTrue(centre[1] == 84.722218027997442);
+            Assert.IsTrue(center[0] == -178.06640625);
+            Assert.IsTrue(center[1] == 84.722218027997442);
         }
 
         [Test]

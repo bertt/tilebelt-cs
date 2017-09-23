@@ -28,7 +28,7 @@ namespace Tiles.Tools
                 return otherTile.X == X && otherTile.Y == Y && otherTile.Z == Z;
         }
 
-        public double[] Centre()
+        public double[] Center()
         {
             var bounds = Bounds();
             var lon = bounds[0] + (bounds[2] - bounds[0]) / 2;
