@@ -34,6 +34,19 @@ namespace Tests
         }
 
         [Test]
+        public void TestProperties()
+        {
+            //arrange
+            var tile = new Tile(5, 10, 10);
+
+            // act 
+            tile.Properties.Add("test", 5);
+
+            // assert
+            Assert.IsTrue((int)tile.Properties["test"] == 5);
+        }
+
+        [Test]
         public void OtherCenterTest()
         {
             //arrange

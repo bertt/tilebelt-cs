@@ -7,17 +7,21 @@ namespace Tiles.Tools
     {
         public Tile()
         {
+            Properties = new Dictionary<string, object>();
         }
 
-        public Tile(int X, int Y, int Z)
+        public Tile(int X, int Y, int Z): this()
         {
             this.X = X;
             this.Y = Y;
             this.Z = Z;
         }
+
         public int X { get; set; }
         public int Y { get; set; }
         public int Z { get; set; }
+
+        public Dictionary<string, object> Properties { get; set; }
 
         public override bool Equals(Object tile)
         {
