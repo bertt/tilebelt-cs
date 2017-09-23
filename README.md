@@ -55,7 +55,10 @@ var tile = Tilebelt.BboxToTile(-84.72,11.17,-5.62,61.60);
 // ------------------------------------------------------
 // tile constructors
 var tile = new Tile();
-var tile = new Tile(5,5,10); // col, row, level 
+var tile = new Tile(5,5,10); // col, row, level
+
+// tile.Center - get center point of tile
+var center = tile.Center(); 
 
 // tile.Bounds - get bounding box of tile
 // input: -
