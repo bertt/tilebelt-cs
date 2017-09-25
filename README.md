@@ -14,14 +14,6 @@ package-install tilebelt
 
 .NETStandard 1.1
 
-- System.Collections (>= 4.3.0)
-
-- System.Runtime.Extensions (>= 4.3.0)
-
-- System.Resources.ResourceManager (>= 4.3.0)
-
-- System.Runtime (>= 4.3.0)
-
 ## Dependents
 
 https://github.com/bertt/quantized-mesh-tile-cs
@@ -45,10 +37,11 @@ var tile = Tilebelt.PointToTile(0, 0, 10);
 // output: zoomlevel (int)
 var level = Tilebelt.GetBboxZoom(-84.72,11.17,-5.62,61.60);
 
-// Tilebel.BboxToTile
+// Tilebelt.BboxToTile
 // input: bounds [xmin, ymin, xmax, ymax] in WGS84
 // output: tile, smallest tile to cover the bbox
 var tile = Tilebelt.BboxToTile(-84.72,11.17,-5.62,61.60);
+
 
 // ------------------------------------------------------
 // Tile methods
@@ -79,6 +72,10 @@ var parentTile = tile.Parent();
 // input: -
 // out: 4 siblings tiles
 var siblings = tile.Siblings();
+
+// tile.Intersects
+// input: a line (2 points) 
+public bool Intersects(Point2 from, Point2 to)
 
 // tile.Equals
 // input: tile (col, row, level)
