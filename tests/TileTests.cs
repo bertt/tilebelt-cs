@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
-using Tiles.Tools;
 
-namespace Tests
+namespace Tiles.Tools.Tests
 {
     public class TileTests
     {
@@ -32,6 +31,38 @@ namespace Tests
             Assert.IsTrue(center[0] == 0);
             Assert.IsTrue(center[1] == 0);
         }
+
+
+        [Test]
+        public void TestIntersects()
+        {
+            //arrange
+            var tile = new Tile(5, 10, 10);
+            var bounds = tile.Bounds();
+            var from = new Point2 ( -178.3, 84.70 );
+            var to = new Point2 ( -177.9, 84.73 );
+
+            // act
+            var result = tile.Intersects(from, to);
+
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void TestIntersects2()
+        {
+            //arrange
+            var tile = new Tile(5, 10, 10);
+            var bounds = tile.Bounds();
+            var from = new Point2 ( 0, 0 );
+            var to = new Point2 ( 1, 1 );
+
+            // act
+            var result = tile.Intersects(from, to);
+
+            Assert.IsFalse(result);
+        }
+
 
         [Test]
         public void TestProperties()

@@ -59,6 +59,31 @@ namespace Tiles.Tools
             return new List<Tile>() { t1, t2, t3, t4 };
         }
 
+        private Point2 BoundsLL()
+        {
+            var bounds = Bounds();
+            return new Point2 (bounds[0], bounds[1]);
+        }
+
+        private Point2 BoundsUL()
+        {
+            var bounds = Bounds();
+            return new Point2(bounds[0], bounds[3]);
+        }
+
+        private Point2 BoundsUR()
+        {
+            var bounds = Bounds();
+            return new Point2(bounds[2], bounds[3]);
+        }
+
+        private Point2 BoundsLR()
+        {
+            var bounds = Bounds();
+            return new Point2 (bounds[2], bounds[1] );
+        }
+
+
         public Tile Parent()
         {
             return new Tile(X >> 1, Y >> 1, Z > 0 ? Z - 1 : Z);
@@ -68,6 +93,16 @@ namespace Tiles.Tools
         {
             var parentTile = Parent();
             return parentTile.Children();
+        }
+
+        public bool Intersects(Point2 from, Point2 to)
+        {
+            var result = (Intersector.Intersects(BoundsLL(), BoundsUL(), from, to, out Point2 res)) ||
+                (Intersector.Intersects(BoundsUL(), BoundsUR(), from, to, out res)) ||
+                (Intersector.Intersects(BoundsUR(), BoundsLR(), from, to, out res)) ||
+                (Intersector.Intersects(BoundsLL(), BoundsLR(), from, to, out res));
+
+            return result;
         }
 
         public override int GetHashCode()
