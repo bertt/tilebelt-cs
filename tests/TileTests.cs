@@ -32,13 +32,42 @@ namespace Tiles.Tools.Tests
             Assert.IsTrue(center[1] == 0);
         }
 
+        [Test]
+        public void IntersectorTest1()
+        {
+            // arrange
+            var from = new Point2(5.24774, 52.04771);
+            var to = new Point2(5.26747, 52.03216);
+            var tile = new Tile(8431, 5408, 14);
+
+            // act
+            var res = Intersector.Intersects(tile.BoundsLL(), tile.BoundsUL(), from, to, out Point2 res1);
+
+            // assert
+            Assert.IsTrue(res);
+        }
+
+
+        [Test]
+        public void IntersectorTest()
+        {
+            // arrange
+            var tile = new Tile(8431, 5408, 14);
+            var l0 = new Point2(5.24774, 52.04771);
+            var l1 = new Point2(5.26747, 52.03216);
+
+            // act
+            var res = tile.Intersects(l0, l1);
+
+            // assert
+            Assert.IsTrue(res);
+        }
 
         [Test]
         public void TestIntersects()
         {
             //arrange
             var tile = new Tile(5, 10, 10);
-            var bounds = tile.Bounds();
             var from = new Point2 ( -178.3, 84.70 );
             var to = new Point2 ( -177.9, 84.73 );
 

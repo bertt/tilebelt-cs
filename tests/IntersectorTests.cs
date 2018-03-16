@@ -15,8 +15,7 @@ namespace Tilebelt.Tools.Tests
             var to2 = new Point2( 0, 5);
 
             // act
-            Point2 res;
-            var intersects = Intersector.Intersects(from1, to1, from2, to2, out res);
+            var intersects = Intersector.Intersects(from1, to1, from2, to2, out Point2 res3);
 
             // assert
             Assert.IsTrue(intersects);
