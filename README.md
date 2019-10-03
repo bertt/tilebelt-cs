@@ -12,7 +12,7 @@ package-install tilebelt
 
 ## Dependencies
 
-.NETStandard 1.1
+.NETStandard 2.0
 
 ## Dependents
 
@@ -23,6 +23,12 @@ https://github.com/bertt/quantized-mesh-tile-cs
 // ------------------------------------------------------
 // Tilebelt methods
 // ------------------------------------------------------
+
+// Tilebelt.GetTilesOnLevel
+// input: bounds [xmin, ymin, xmax, ymax] in WGS84 and z-level
+// output: List of tiles in bounds and on level
+var tiles = Tilebelt.GetTilesOnLevel(new double[]{-84.72,11.17,-5.62,61.60}, 10);
+
 // Tilebelt.PointToTile
 // input: x, y in WGS84
 // output: tile (col, row,level)
@@ -35,12 +41,12 @@ var tile = Tilebelt.PointToTile(0, 0, 10);
 // Tilebelt.GetBboxZoom
 // input: bounds [xmin, ymin, xmax, ymax] in WGS84
 // output: zoomlevel (int)
-var level = Tilebelt.GetBboxZoom(-84.72,11.17,-5.62,61.60);
+var level = Tilebelt.GetBboxZoom(new double[]{-84.72,11.17,-5.62,61.60});
 
 // Tilebelt.BboxToTile
 // input: bounds [xmin, ymin, xmax, ymax] in WGS84
 // output: tile, smallest tile to cover the bbox
-var tile = Tilebelt.BboxToTile(-84.72,11.17,-5.62,61.60);
+var tile = Tilebelt.BboxToTile(new double[]{-84.72,11.17,-5.62,61.60});
 
 
 // ------------------------------------------------------

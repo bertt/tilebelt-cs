@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tilebelt-cs.tests", "tests\tilebelt-cs.tests.csproj", "{66401402-4181-4FEB-9397-4D6C177344A3}"
 EndProject
@@ -9,7 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{6FEF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tile-cs-sample.console", "samples\console\tile-cs-sample.console.csproj", "{5C2EA924-BCC7-4F81-B832-64EF252704D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tilebelt-cs", "tilebelt-cs\tilebelt-cs.csproj", "{BBCDB3E8-9D8C-4657-8332-020F862A8669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tilebelt-cs", "tilebelt-cs\tilebelt-cs.csproj", "{BBCDB3E8-9D8C-4657-8332-020F862A8669}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{DD31522A-6421-4C4F-8152-092CC6CBDD86}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
