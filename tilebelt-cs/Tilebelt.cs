@@ -1,10 +1,43 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Tiles.Tools
 {
     public class Tilebelt
     {
         private static double d2r = Math.PI / 180;
+
+        public static List<Tile> GetTilesOnLevel(double[] extent, int level)
+        {
+            var res = new List<Tile>();
+            var firstTile = Tilebelt.PointToTile(extent[0], extent[1], level);
+            var secondTile = Tilebelt.PointToTile(extent[2], extent[3], level);
+            res.Add(firstTile);
+            res.Add(secondTile);
+
+            if (Math.Abs(firstTile.X - secondTile.X) >= 1 || Math.Abs(firstTile.Y - secondTile.Y) >= 1)
+            {
+                var minX = Math.Min(secondTile.X, firstTile.X);
+                var maxX = Math.Max(secondTile.X, firstTile.X);
+                var minY = Math.Min(secondTile.Y, firstTile.Y);
+                var maxY = Math.Max(secondTile.Y, firstTile.Y);
+
+                for (var i = minX; i <= maxX; i++)
+                {
+                    for (var j = minY; j <= maxY; j++)
+                    {
+                        var t = new Tile(i, j, level);
+
+                        if (!t.Equals(firstTile) && !t.Equals(secondTile))
+                        {
+                            res.Add(t);
+                        }
+                    }
+                }
+            }
+            return res;
+        }
+
 
         public static int GetBboxZoom(double[] bbox)
         {
@@ -24,7 +57,7 @@ namespace Tiles.Tools
 
         public static Tile BboxToTile(double[] bbox)
         {
-            var p = bbox[0];
+            // var p = bbox[0];
             var minTile = PointToTile(bbox[0], bbox[1], 32);
             var maxTile = PointToTile(bbox[2], bbox[3], 32);
 

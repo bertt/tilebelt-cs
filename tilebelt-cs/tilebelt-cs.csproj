@@ -1,17 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Tile.Tools</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>tilebelt</PackageId>
     <Authors>Bert Temme</Authors>
     <PackageProjectUrl>https://github.com/bertt/tilebelt-cs</PackageProjectUrl>
-    <Version>1.3.1</Version>
+    <Version>1.3.2</Version>
     <Description>Set of tile utility functions</Description>
     <Company />
     <RepositoryUrl>https://github.com/bertt/tilebelt-cs</RepositoryUrl>
     <PackageTags>tile tms level col row</PackageTags>
+    <AssemblyVersion>1.3.2.0</AssemblyVersion>
+    <FileVersion>1.3.2.0</FileVersion>
   </PropertyGroup>
 
 </Project>

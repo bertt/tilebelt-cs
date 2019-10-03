@@ -1,9 +1,31 @@
 ﻿using NUnit.Framework;
+using System.Linq;
 
 namespace Tiles.Tools.Tests
 {
     public class TilebeltTests
     {
+        [Test]
+        public void GetTilesOnLevelTests()
+        {
+            var tiles = Tilebelt.GetTilesOnLevel(new double[] { 5.116882, 51.926908, 5.770226, 52.156874 }, 10);
+            Assert.IsTrue(tiles.ToList().Count == 6);
+        }
+
+        [Test]
+        public void QuadkeyToTile()
+        {
+            var t = new Tile(8131, 5243, 13);
+            var key = t.Quadkey();
+            Assert.IsTrue(key == "3131113222033");
+
+            // var key = "3131113222033";
+            var tile = Tilebelt.QuadkeyToTile(key);
+            Assert.IsTrue(tile.Z == 13);
+            Assert.IsTrue(tile.X == 8131);
+            Assert.IsTrue(tile.Y == 5243);
+        }
+
         [Test]
         public void BboxToTileBig()
         {
