@@ -64,7 +64,7 @@ namespace Tiles.Tools
             var newBbox = new double[] { minTile.X, minTile.Y, maxTile.X, maxTile.Y };
 
             var z = GetBboxZoom(newBbox);
-            if (z == 0) return new Tile(0, 0, 0);
+            if (GetBboxZoom(bbox)==0) return new Tile(0, 0, 0);
             var x = (int)newBbox[0] >> (32 - z);
             var y = (int)newBbox[1] >> (32 - z);
             return new Tile(x, y, z);

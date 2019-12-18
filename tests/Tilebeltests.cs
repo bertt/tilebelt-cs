@@ -6,6 +6,15 @@ namespace Tiles.Tools.Tests
     public class TilebeltTests
     {
         [Test]
+        public void TestIssue1()
+        {
+            // see https://github.com/bertt/tilebelt-cs/issues/1
+            var bbox = new double[] { -180, 41.1850968, 180, 82.0586232 };
+            var tile = Tilebelt.BboxToTile(bbox);
+            Assert.IsTrue(tile.Z == 0 && tile.X == 0 && tile.Y==0);
+        }
+
+        [Test]
         public void GetTilesOnLevelTests()
         {
             var tiles = Tilebelt.GetTilesOnLevel(new double[] { 5.116882, 51.926908, 5.770226, 52.156874 }, 10);
@@ -79,6 +88,8 @@ namespace Tiles.Tools.Tests
             // assert
             Assert.IsTrue(tile.Equals(expectedTile));
         }
+
+
 
         [Test]
         public void BboxToTileCrossingLatLon()
