@@ -12,7 +12,7 @@ package-install tilebelt
 
 ## Dependencies
 
-.NETStandard 2.0
+.NET 6.0
 
 ## Dependents
 
@@ -93,3 +93,10 @@ var equals = tile1.Equals(tile2);
 // output: Quadkey of tile
 var quadkey = tile.Quadkey(); 
 ```
+
+
+## History
+
+2023-08-13: v2.0 - .NET 6.0
+
+2019-12-18: v1.0 - .NET Standard 2.0
