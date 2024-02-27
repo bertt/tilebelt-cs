@@ -89,7 +89,7 @@ public class TileTests
         // act
         var result = tile.Intersects(from, to);
 
-        Assert.That(result);
+        Assert.That(!result);
     }
 
 
