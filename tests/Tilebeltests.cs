@@ -10,14 +10,14 @@ public class TilebeltTests
         // see https://github.com/bertt/tilebelt-cs/issues/1
         var bbox = new double[] { -180, 41.1850968, 180, 82.0586232 };
         var tile = Tilebelt.BboxToTile(bbox);
-        Assert.IsTrue(tile.Z == 0 && tile.X == 0 && tile.Y==0);
+        Assert.That(tile.Z == 0 && tile.X == 0 && tile.Y==0);
     }
 
     [Test]
     public void GetTilesOnLevelTests()
     {
         var tiles = Tilebelt.GetTilesOnLevel(new double[] { 5.116882, 51.926908, 5.770226, 52.156874 }, 10);
-        Assert.IsTrue(tiles.ToList().Count == 6);
+        Assert.That(tiles.ToList().Count == 6);
     }
 
     [Test]
@@ -25,13 +25,13 @@ public class TilebeltTests
     {
         var t = new Tile(8131, 5243, 13);
         var key = t.Quadkey();
-        Assert.IsTrue(key == "3131113222033");
+        Assert.That(key == "3131113222033");
 
         // var key = "3131113222033";
         var tile = Tilebelt.QuadkeyToTile(key);
-        Assert.IsTrue(tile.Z == 13);
-        Assert.IsTrue(tile.X == 8131);
-        Assert.IsTrue(tile.Y == 5243);
+        Assert.That(tile.Z == 13);
+        Assert.That(tile.X == 8131);
+        Assert.That(tile.Y == 5243);
     }
 
     [Test]
@@ -49,7 +49,7 @@ public class TilebeltTests
         var tile = Tilebelt.BboxToTile(bbox);
 
         // assert
-        Assert.IsTrue(tile.Equals(expectedTile));
+        Assert.That(tile.Equals(expectedTile));
     }
 
     [Test]
@@ -67,7 +67,7 @@ public class TilebeltTests
         var tile = Tilebelt.BboxToTile(bbox);
 
         // assert
-        Assert.IsTrue(tile.Equals(expectedTile));
+        Assert.That(tile.Equals(expectedTile));
     }
 
     [Test]
@@ -85,7 +85,7 @@ public class TilebeltTests
         var tile = Tilebelt.BboxToTile(bbox);
 
         // assert
-        Assert.IsTrue(tile.Equals(expectedTile));
+        Assert.That(tile.Equals(expectedTile));
     }
 
 
@@ -102,7 +102,7 @@ public class TilebeltTests
         var tile = Tilebelt.BboxToTile(bbox);
 
         // assert
-        Assert.IsTrue(tile.Equals(expectedTile));
+        Assert.That(tile.Equals(expectedTile));
     }
 
     [Test]
@@ -117,7 +117,7 @@ public class TilebeltTests
         var tile = Tilebelt.BboxToTile(bbox);
 
         // assert
-        Assert.IsTrue(tile.Equals(expectedTile));
+        Assert.That(tile.Equals(expectedTile));
     }
 
 
@@ -129,9 +129,9 @@ public class TilebeltTests
         var tile = Tilebelt.PointToTile(0, 0, 10);
 
         // assert
-        Assert.IsTrue(tile.Z == 10);
-        Assert.IsTrue(tile.X == 512);
-        Assert.IsTrue(tile.Y == 512);
+        Assert.That(tile.Z == 10);
+        Assert.That(tile.X == 512);
+        Assert.That(tile.Y == 512);
     }
 
     [Test]
@@ -145,10 +145,10 @@ public class TilebeltTests
         var quadkey = tile.Quadkey();
 
         // assert
-        Assert.IsTrue(tile.X == 292);
-        Assert.IsTrue(tile.Y == 391);
-        Assert.IsTrue(tile.Z == 10);
-        Assert.IsTrue(quadkey == expectedQuadkey);
+        Assert.That(tile.X == 292);
+        Assert.That(tile.Y == 391);
+        Assert.That(tile.Z == 10);
+        Assert.That(quadkey == expectedQuadkey);
     }
 
     [Test]
@@ -163,7 +163,7 @@ public class TilebeltTests
         var p = ((int)bbox0 & mask);
 
         // assert
-        Assert.IsTrue(p == expectedResult);
+        Assert.That(p == expectedResult);
     }
 
     [Test]
@@ -180,7 +180,7 @@ public class TilebeltTests
         var level = Tilebelt.GetBboxZoom(bbox);
 
         // assert
-        Assert.IsTrue(level == expectedLevel);
+        Assert.That(level == expectedLevel);
     }
 
     [Test]
@@ -197,6 +197,6 @@ public class TilebeltTests
         var level = Tilebelt.GetBboxZoom(bbox);
 
         // assert
-        Assert.IsTrue(level == expectedLevel);
+        Assert.That(level == expectedLevel);
     }
 }

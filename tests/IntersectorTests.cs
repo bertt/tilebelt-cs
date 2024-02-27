@@ -18,7 +18,7 @@ public class IntersectorTests
         var intersects = Intersector.Intersects(from1, to1, from2, to2, out Point2 res3);
 
         // assert
-        Assert.IsTrue(intersects);
+        Assert.That(intersects);
     }
 
     [Test]
@@ -35,6 +35,6 @@ public class IntersectorTests
         var intersects = Intersector.Intersects(from1, to1, from2, to2, out res);
 
         // assert
-        Assert.IsFalse(intersects);
+        Assert.That(!intersects);
     }
 }

@@ -7,7 +7,8 @@
     <PackageId>tilebelt</PackageId>
     <Authors>Bert Temme</Authors>
     <PackageProjectUrl>https://github.com/bertt/tilebelt-cs</PackageProjectUrl>
-    <Version>2.0</Version>
+	<PackageOutputPath>./nupkg</PackageOutputPath>
+	<Version>2.0</Version>
     <Description>Set of tile utility functions</Description>
     <Company />
     <RepositoryUrl>https://github.com/bertt/tilebelt-cs</RepositoryUrl>
