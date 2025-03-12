@@ -14,6 +14,21 @@ public class TilebeltTests
     }
 
     [Test]
+    public void GetTilesOnLevel0Tests0()
+    {
+        var tiles = Tilebelt.GetTilesOnLevel(new double[] { -180, -85.0511, 180, 85.0511 }, 0);
+        Assert.That(tiles.ToList().Count == 1);
+    }
+
+    // [Test]
+    public void GetTilesOnLevel1Tests()
+    {
+        var tiles = Tilebelt.GetTilesOnLevel(new double[] { -180, -85.0511, 180, 85.0511 }, 1);
+        Assert.That(tiles.ToList().Count == 4);
+    }
+
+
+    [Test]
     public void GetTilesOnLevelTests()
     {
         var tiles = Tilebelt.GetTilesOnLevel(new double[] { 5.116882, 51.926908, 5.770226, 52.156874 }, 10);

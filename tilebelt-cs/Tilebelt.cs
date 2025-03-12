@@ -10,8 +10,11 @@ public class Tilebelt
     public static List<Tile> GetTilesOnLevel(double[] extent, int level)
     {
         var res = new List<Tile>();
-        var firstTile = Tilebelt.PointToTile(extent[0], extent[1], level);
-        var secondTile = Tilebelt.PointToTile(extent[2], extent[3], level);
+        var firstTile = PointToTile(extent[0], extent[1], level);
+        var secondTile = PointToTile(extent[2], extent[3], level);
+
+        if(firstTile.Equals(secondTile)) return new List<Tile> { firstTile };
+
         res.Add(firstTile);
         res.Add(secondTile);
 
